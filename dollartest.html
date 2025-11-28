@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Launch – $1 Buyer Traffic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #3b0000, #000000 55%);
+      color: #ffffff;
+    }
+
+    .page-wrapper {
+      max-width: 900px;
+      width: 95%;
+      margin: 20px;
+      padding: 30px 25px 35px;
+      background: linear-gradient(135deg, #1b1b1b, #2a0000);
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255, 0, 0, 0.16);
+      border: 1px solid rgba(255, 0, 0, 0.6);
+      margin-bottom: 10px;
+    }
+
+    .blink-title {
+      font-size: 40px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 16px;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+      color: #ff0000;
+      animation: blink 0.9s infinite alternate;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0.3;
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+      }
+      50% {
+        opacity: 1;
+        text-shadow: 0 0 18px rgba(255, 0, 0, 0.9);
+      }
+      100% {
+        opacity: 0.6;
+        text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+      }
+    }
+
+    .subline {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .subline span {
+      color: #ffdd55;
+    }
+
+    .tiny-note {
+      text-align: center;
+      font-size: 13px;
+      margin-bottom: 28px;
+      color: #f1f1f1;
+      opacity: 0.86;
+    }
+
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 22px;
+    }
+
+    @media (max-width: 768px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timer-box {
+      background: radial-gradient(circle at top left, #550000, #141414);
+      border-radius: 14px;
+      padding: 16px 18px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timer-box::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 90deg, rgba(255,0,0,0.25), transparent, rgba(255,255,0,0.25), transparent);
+      opacity: 0.3;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .timer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timer-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffbfbf;
+    }
+
+    .timer-live {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .timer-live span.dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #ff0000;
+      margin-right: 4px;
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.9);
+    }
+
+    .timer-value {
+      margin-top: 10px;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timer-caption {
+      margin-top: 4px;
+      font-size: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffe2e2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing {
+      margin-top: 14px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .price-now {
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .price-now span {
+      color: #00ff9c;
+    }
+
+    .price-later {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #ffaaaa;
+    }
+
+    .price-later span {
+      text-decoration: line-through;
+      opacity: 0.9;
+    }
+
+    .urgency {
+      font-size: 13px;
+      margin-top: 10px;
+      color: #ffdd55;
+    }
+
+    .cta-wrapper {
+      margin-top: 16px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff0000, #ff6b00);
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.7), 0 0 22px rgba(255, 60, 0, 0.9);
+      color: #ffffff;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button span.sub {
+      display: block;
+      font-size: 11px;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    .cta-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.5), transparent);
+      transform: skewX(-20deg);
+      opacity: 0.0;
+    }
+
+    .cta-button:hover::before {
+      animation: shine 0.7s forwards;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -120%;
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      100% {
+        left: 130%;
+        opacity: 0;
+      }
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    .cta-button:active {
+      transform: translateY(0) scale(0.99);
+      box-shadow: 0 0 9px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Right side: newsletter form */
+
+    .newsletter-box {
+      background: linear-gradient(145deg, #101010, #220022);
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
+    }
+
+    .newsletter-title {
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      color: #ffdd55;
+    }
+
+    .newsletter-sub {
+      font-size: 13px;
+      margin-bottom: 14px;
+      color: #ffffff;
+      opacity: 0.9;
+    }
+
+    .newsletter-bullets {
+      list-style: none;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: #f5f5f5;
+    }
+
+    .newsletter-bullets li::before {
+      content: "➤";
+      margin-right: 6px;
+      font-size: 10px;
+      color: #ff4b4b;
+    }
+
+    .newsletter-form input[type="text"] {
+      width: 100%;
+      padding: 9px 10px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(0, 0, 0, 0.4);
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .newsletter-form input[type="text"]::placeholder {
+      color: #bbbbbb;
+    }
+
+    .newsletter-form button[type="submit"] {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #ff0088, #ff2200);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 0 14px rgba(255, 0, 120, 0.65);
+    }
+
+    .newsletter-form button[type="submit"]:hover {
+      transform: translateY(-1px);
+    }
+
+    .newsletter-form button[type="submit"]:active {
+      transform: translateY(0);
+      box-shadow: 0 0 8px rgba(255, 0, 120, 0.75);
+    }
+
+    .newsletter-note {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #f0f0f0;
+      opacity: 0.75;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 11px;
+      color: #aaaaaa;
+      opacity: 0.7;
+    }
+
+    a {
+      color: #ffdd55;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <div class="badge">Launch Special • Intro Offer</div>
+  <div class="blink-title">NEW LAUNCH</div>
+
+  <div class="subline">
+    Get <span>endless buyer traffic</span> for just <span>one single dollar</span>
+  </div>
+  <div class="tiny-note">
+    Your $1 test drive is designed to be a no-brainer. If you hesitate now, you’ll keep wondering how much traffic you left on the table.
+  </div>
+
+  <div class="main-layout">
+    <!-- LEFT: TIMER + CTA -->
+    <div>
+      <div class="timer-box">
+        <div class="timer-header">
+          <div class="timer-label">Launch countdown</div>
+          <div class="timer-live">
+            <span class="dot"></span> price pressure is on
+          </div>
+        </div>
+
+        <div id="countdown" class="timer-value">01:15:00</div>
+        <div id="timer-caption" class="timer-caption">
+          When this hits zero, the launch window can close any moment.
+        </div>
+
+        <div class="pricing">
+          <div id="price-now" class="price-now">
+            Today: <span>$1</span> intro access
+          </div>
+          <div id="price-later" class="price-later">
+            Regular price: <span>$90</span> after the launch window.
+          </div>
+          <div id="urgency-text" class="urgency">
+            Grab the unfair advantage while it’s still in “almost free” mode.
+          </div>
+        </div>
+
+        <div class="cta-wrapper">
+          <a id="cta-button"
+             class="cta-button"
+             href="https://warriorplus.com/o2/a/qdtcydr/0/onedollarpage"
+             target="_blank"
+             rel="noopener noreferrer">
+            Yes – lock in my $1 buyer traffic now
+            <span class="sub">I understand the price can jump to $90 later.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: NEWSLETTER / EMAIL FORM -->
+    <div>
+      <div class="newsletter-box">
+        <div class="newsletter-title">
+          Want more offers like this?
+        </div>
+        <div class="newsletter-sub">
+          Don’t rely on luck. Get notified the moment ruthless-money offers like this go live again.
+        </div>
+
+        <ul class="newsletter-bullets">
+          <li>Hand-picked deals that feel almost “unfair” in your favor</li>
+          <li>Short, punchy emails – no fluff, just leverage</li>
+          <li>First in line before prices jump or spots vanish</li>
+        </ul>
+
+        <form class="newsletter-form" method="post" action="https://www.sendsteed.com/subscribe/">
+          <input name="e116667" required="" type="text" placeholder="your@email.com">
+          <input name="n116667" required="" type="text" placeholder="Name">
+          <input type="hidden" name="lllid" value="116667">
+          <input type="hidden" name="lluid" value="sandyarta">
+          <input type="hidden" name="redirect" value="">
+          <input type="hidden" name="source" value="onedollarpage">
+          <button type="submit">Yes, send me more “$1-style” opportunities</button>
+        </form>
+
+        <div class="newsletter-note">
+          No spam. Just aggressive little money-multipliers you’d hate to miss.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Prices and availability can change at any time. Always check the final price on the checkout page before purchasing.
+  </div>
+</div>
+
+<script>
+  // Countdown timer: 1 hour 15 minutes (75 minutes total)
+  let totalSeconds = 75 * 60; // 75 minutes
+
+  const countdownEl = document.getElementById("countdown");
+  const timerCaptionEl = document.getElementById("timer-caption");
+  const priceNowEl = document.getElementById("price-now");
+  const priceLaterEl = document.getElementById("price-later");
+  const urgencyTextEl = document.getElementById("urgency-text");
+  const ctaButtonEl = document.getElementById("cta-button");
+
+  function updateCountdown() {
+    if (totalSeconds <= 0) {
+      countdownEl.textContent = "00:00:00";
+
+      // After timer ends, shift the messaging (no fake guarantee – just strong pressure)
+      timerCaptionEl.textContent = "The launch window can close without warning. The $1 access may no longer be available.";
+      priceNowEl.innerHTML = 'Check current access: <span>price may be higher now</span>';
+      priceLaterEl.textContent = "Regular price is set to $90 – if you see $1, you’re lucky.";
+      urgencyTextEl.textContent = "Click below to see if the $1 loophole is still open for you.";
+      ctaButtonEl.textContent = "Check if the $1 launch deal is still available";
+
+      return;
+    }
+
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    const format = (num) => (num < 10 ? "0" + num : num);
+
+    countdownEl.textContent =
+      format(hours) + ":" + format(minutes) + ":" + format(seconds);
+
+    totalSeconds--;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
