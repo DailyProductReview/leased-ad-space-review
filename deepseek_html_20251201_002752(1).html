@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Ads for Instant Rewards!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00ff88, #00ccff, #ff00ff, #ffaa00);
+            animation: shimmer 3s infinite linear;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #00ff88, #00ccff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: #00ccff;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+        }
+        
+        .urgent-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff0000, #ff5500);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            margin: 10px 0;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .ads-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .ads-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ads-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 204, 255, 0.5);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 204, 255, 0.3);
+            color: #00ccff;
+            font-size: 22px;
+            text-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+        }
+        
+        .refresh-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .refresh-btn {
+            background: linear-gradient(45deg, #ff00ff, #00ccff);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .refresh-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #00ccff, #ff00ff);
+        }
+        
+        .refresh-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .refresh-btn::after {
+            content: '🔄';
+            margin-left: 10px;
+        }
+        
+        .footer-text {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glowing-text {
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+            font-weight: bold;
+        }
+        
+        .limited-offer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #ff0000, #ff5500);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        @media (max-width: 768px) {
+            .ads-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CLICK ADS FOR INSTANT REWARDS!</h1>
+            <div class="subtitle">Exclusive Offers Refresh Every Visit</div>
+            <div class="urgent-badge">LIMITED TIME OFFERS - ACT FAST!</div>
+        </header>
+        
+        <main>
+            <div class="ads-container">
+                <div class="ads-section">
+                    <div class="limited-offer">LIMITED OFFER</div>
+                    <h2 class="section-title">HOTTEST DEALS TODAY</h2>
+                    <script data-cfasync="false">
+                        ll_r="sandyarta";
+                        ll_bc="#ffffff";
+                        ll_hc="#e22121";
+                        ll_tc="#555a69";
+                        ll_cc="#8d9aa6";
+                        ll_dc="#8891a8";
+                        ll_w="";
+                        ll_nf="0";
+                        ll_nc="1";
+                        ll_nh="0";
+                        ll_nm="0";
+                        ll_np="1";
+                        ll_pa="1";
+                        ll_nt="0";
+                        ll_wt="1";
+                        ll_fw="1";
+                        ll_n="6";
+                        ll_cl="";
+                        ll_s="w";
+                    </script>
+                    <script data-cfasync="false" src="https://w.leadsleap.com/js.js"></script>
+                </div>
+                
+                <div class="ads-section">
+                    <div class="limited-offer">NEW OFFERS</div>
+                    <h2 class="section-title">EXCLUSIVE BONUS ADS</h2>
+                    <script data-cfasync="false">
+                        ll_r="sandyarta";
+                        ll_bc="#ffffff";
+                        ll_hc="#e22121";
+                        ll_tc="#555a69";
+                        ll_cc="#8d9aa6";
+                        ll_dc="#8891a8";
+                        ll_w="";
+                        ll_nf="0";
+                        ll_nc="1";
+                        ll_nh="0";
+                        ll_nm="0";
+                        ll_np="1";
+                        ll_pa="0";
+                        ll_nt="0";
+                        ll_wt="1";
+                        ll_fw="1";
+                        ll_n="6";
+                        ll_cl="";
+                        ll_s="w";
+                    </script>
+                    <script data-cfasync="false" src="https://w.leadsleap.com/js.js"></script>
+                </div>
+
+                <div class="ads-section">
+                    <div class="limited-offer">SPECIAL OFFERS</div>
+                    <h2 class="section-title">PREMIUM ADVERTISERS</h2>
+                    <script data-cfasync="false">
+                        ll_r="sandyarta";
+                        ll_bc="#ffffff";
+                        ll_hc="#e22121";
+                        ll_tc="#555a69";
+                        ll_cc="#8d9aa6";
+                        ll_dc="#8891a8";
+                        ll_w="";
+                        ll_nf="0";
+                        ll_nc="1";
+                        ll_nh="0";
+                        ll_nm="0";
+                        ll_np="1";
+                        ll_pa="0";
+                        ll_nt="0";
+                        ll_wt="1";
+                        ll_fw="1";
+                        ll_n="6";
+                        ll_cl="";
+                        ll_s="w";
+                    </script>
+                    <script data-cfasync="false" src="https://w.leadsleap.com/js.js"></script>
+                </div>
+            </div>
+            
+            <div class="refresh-section">
+                <button class="refresh-btn" onclick="window.location.reload()">REFRESH FOR NEW EXCLUSIVE OFFERS</button>
+                <p style="margin-top: 20px; color: #00ccff; font-size: 18px;">
+                    New <span class="glowing-text">HIGH-VALUE</span> offers loaded every refresh!
+                </p>
+            </div>
+        </main>
+        
+        <div class="footer-text">
+            <p>⚠️ Offers are time-sensitive and may disappear. Refresh to unlock exclusive deals!</p>
+            <p style="margin-top: 10px;">Every click could be your chance to win big rewards!</p>
+        </div>
+    </div>
+</body>
+</html>
