@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Make Money Online with Affiliate Marketing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Discover how to build reliable online income with affiliate marketing. Get my free step-by-step starter guide and learn the exact process to get started."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-light: #111827;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.08);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --danger: #f97373;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 18px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .header-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 16px auto 40px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 18px;
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.25);
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3.2vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 14px;
+    }
+
+    .hero-sublist {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .hero-sublist li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .check {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-radius: 999px;
+      border: none;
+      padding: 10px 26px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      color: #022c22;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(34, 197, 94, 0.45);
+      background: #16a34a;
+    }
+
+    .cta-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .meta-badge {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 55%);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .hero-card-tag {
+      font-size: 0.72rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .hero-card-body {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 7px;
+      border-radius: 999px;
+      background: #020617;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
+    .progress-bar-fill {
+      width: 68%;
+      height: 100%;
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+      box-shadow: 0 0 16px rgba(34, 197, 94, 0.7);
+    }
+
+    .hero-metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 4px;
+      font-size: 0.8rem;
+    }
+
+    .metric {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(75, 85, 99, 0.8);
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .metric-value {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .metric-positive {
+      color: var(--accent);
+      font-size: 0.78rem;
+    }
+
+    .metric-warning {
+      color: var(--danger);
+      font-size: 0.78rem;
+    }
+
+    .preview-text-box {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border: 1px dashed rgba(75, 85, 99, 0.9);
+    }
+
+    .preview-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    /* HOW IT WORKS SECTION */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      padding: 0 24px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      max-width: 620px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .step-card {
+      background: var(--bg-light);
+      border-radius: 14px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+    }
+
+    .step-number {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .step-heading {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .step-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* SIGN-UP SECTION */
+    .signup {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      padding: 22px 24px 32px;
+      border-radius: 18px;
+      border: 1px solid rgba(75, 85, 99, 0.85);
+      background: radial-gradient(circle at top, #0b1120 0, #020617 60%);
+    }
+
+    .signup-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .signup-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .signup-label {
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .signup-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .signup-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .signup-list {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      list-style: none;
+    }
+
+    .signup-list li {
+      margin-bottom: 6px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .signup-list li span {
+      font-size: 0.75rem;
+      margin-top: 3px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: #020617;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    input[type="email"]::placeholder {
+      color: #4b5563;
+    }
+
+    input[type="email"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.5);
+    }
+
+    .privacy-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .legal-notice {
+      margin-top: 10px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 24px 30px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-color: rgba(148, 163, 184, 0.7);
+      text-underline-offset: 3px;
+      font-size: 0.72rem;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">AM</div>
+        <span>Affiliate Momentum</span>
+      </div>
+      <div class="header-tagline">
+        Build reliable online income with smart affiliate systems.
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>Free training • Beginner friendly • No hype</span>
+          </div>
+
+          <h1 class="hero-title">
+            Learn how to
+            <span class="hero-highlight">make money online</span><br />
+            with affiliate marketing — the right way.
+          </h1>
+
+          <p class="hero-subtitle">
+            Get a practical, no-BS guide that shows you how to pick offers,
+            attract the right visitors, and turn clicks into real commissions —
+            without fake promises or shady tactics.
+          </p>
+
+          <ul class="hero-sublist">
+            <li>
+              <div class="check">✓</div>
+              <span>Step-by-step process: from zero to your first commission.</span>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <span>What actually works in 2025 — and what quietly kills your results.</span>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <span>Simple system you can run in your free time next to your main job.</span>
+            </li>
+          </ul>
+
+          <div class="hero-cta-row">
+            <button class="btn-primary" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'});">
+              Get the free starter guide
+            </button>
+            <span class="cta-note">Takes 10 seconds. No credit card required.</span>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-badge">Made for beginners & early-stage marketers</div>
+            <div class="meta-badge">Works with affiliate networks like Digistore24, CJ, etc.</div>
+          </div>
+        </div>
+
+        <!-- HERO CARD (PREVIEW / SOCIAL PROOF STYLE) -->
+        <aside class="hero-card" aria-label="Preview of your progress dashboard">
+          <div class="hero-card-header">
+            <div class="hero-card-title">Affiliate Starter Snapshot</div>
+            <div class="hero-card-tag">Preview</div>
+          </div>
+          <p class="hero-card-body">
+            Imagine logging in and seeing a simple dashboard that shows you
+            exactly where your affiliate income comes from — and how to grow it
+            without guessing.
+          </p>
+
+          <div class="progress-row">
+            <span>Path to your first commission</span>
+            <span>68% planned</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill"></div>
+          </div>
+
+          <div class="hero-metric-row">
+            <div class="metric">
+              <div class="metric-label">Traffic without intent</div>
+              <div class="metric-value">Too high</div>
+              <div class="metric-warning">
+                Most newbies send random clicks and wonder why nothing sells.
+              </div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Focused buyer traffic</div>
+              <div class="metric-value">Needs work</div>
+              <div class="metric-positive">
+                The guide shows you how to attract people already looking to buy.
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-text-box">
+            <div class="preview-label">Inside the free guide</div>
+            <div>
+              • The 3 silent mistakes that keep people stuck with “$0 months”<br />
+              • How to choose offers that can realistically pay you<br />
+              • Simple page + email structure that makes it easy to say “yes”
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section">
+        <h2 class="section-title">Here’s how your affiliate system will work</h2>
+        <p class="section-subtitle">
+          Instead of chasing the next “secret hack”, you’ll build a clear, repeatable
+          system: one traffic source, one landing page, one main offer — then scale.
+        </p>
+
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-number">Step 1</div>
+            <div class="step-heading">Pick offers that can actually pay you</div>
+            <p class="step-text">
+              You’ll learn how to spot solid affiliate programs, avoid low-quality
+              products, and understand commission structures so you don’t waste
+              time on offers that will never move the needle.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">Step 2</div>
+            <div class="step-heading">Build a simple page that collects leads</div>
+            <p class="step-text">
+              You get a clear page layout that turns visitors into email subscribers,
+              plus the exact elements that make people trust you enough to click and buy.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">Step 3</div>
+            <div class="step-heading">Send focused traffic & follow up</div>
+            <p class="step-text">
+              Instead of random traffic, you’ll send targeted visitors with intent.
+              The follow-up emails warm them up and guide them toward your offer —
+              even while you’re not online.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGN-UP -->
+      <section id="signup" class="signup" aria-label="Sign up for the free affiliate starter guide">
+        <div class="signup-inner">
+          <div>
+            <div class="signup-label">Free training • Limited spots</div>
+            <h2 class="signup-title">
+              Get the <strong>Affiliate Starter Guide</strong> sent straight to your inbox.
+            </h2>
+            <p class="signup-text">
+              Drop in your best email and I’ll send you the guide with the exact framework
+              I use to evaluate offers, build simple pages, and turn attention into
+              predictable affiliate commissions.
+            </p>
+            <ul class="signup-list">
+              <li>
+                <span>•</span>
+                <span>Clear, beginner-friendly explanations — no jargon or hype.</span>
+              </li>
+              <li>
+                <span>•</span>
+                <span>Concrete examples you can adapt to your own niche.</span>
+              </li>
+              <li>
+                <span>•</span>
+                <span>Next-step checklist so you always know what to do first.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <!-- Replace action with your email tool / autoresponder URL -->
+            <form action="#" method="post">
+              <label for="email">Enter your email address to get instant access:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+              <button type="submit" class="btn-primary">
+                Send me the free guide
+              </button>
+              <p class="privacy-note">
+                By signing up you agree to receive helpful emails about affiliate marketing.
+                You can unsubscribe at any time with one click.
+              </p>
+            </form>
+
+            <p class="legal-notice">
+              <strong>Income disclaimer:</strong> This guide shares strategies and examples,
+              not guarantees. Your results depend on your own effort, skills, and market
+              conditions. <br /><br />
+              <strong>Affiliate disclosure:</strong> Some links in the guide or emails may be
+              affiliate links. If you choose to buy through them, I may earn a commission —
+              at no extra cost to you.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-row">
+        <span>© <span id="year"></span> Affiliate Momentum. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#">Imprint</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+      <div>
+        This digital content is for personal use only and may not be copied,
+        redistributed, or resold in any form.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple year auto-update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
