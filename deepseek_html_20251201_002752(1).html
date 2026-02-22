@@ -89,6 +89,42 @@
             100% { transform: scale(1); }
         }
         
+        .top-refresh-section {
+            text-align: center;
+            margin: 30px 0 50px 0;
+        }
+        
+        .refresh-btn {
+            background: linear-gradient(45deg, #ff00ff, #00ccff);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .refresh-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #00ccff, #ff00ff);
+        }
+        
+        .refresh-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .refresh-btn::after {
+            content: '🔄';
+            margin-left: 10px;
+        }
+        
         .ads-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -126,37 +162,6 @@
         .refresh-section {
             text-align: center;
             margin: 50px 0;
-        }
-        
-        .refresh-btn {
-            background: linear-gradient(45deg, #ff00ff, #00ccff);
-            color: white;
-            border: none;
-            padding: 18px 45px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .refresh-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(45deg, #00ccff, #ff00ff);
-        }
-        
-        .refresh-btn:active {
-            transform: scale(0.98);
-        }
-        
-        .refresh-btn::after {
-            content: '🔄';
-            margin-left: 10px;
         }
         
         .footer-text {
@@ -205,14 +210,23 @@
 </head>
 <body>
     <div class="container">
-       
-  <div class="refresh-section">
-                <button class="refresh-btn" onclick="window.location.reload()">REFRESH FOR NEW EXCLUSIVE OFFERS</button>
-                <p style="margin-top: 20px; color: #00ccff; font-size: 18px;">
-                    New <span class="glowing-text">HIGH-VALUE</span> offers loaded every refresh!
+        <header>
+            <h1>🚀 EXCLUSIVE OFFERS ZONE 🚀</h1>
+            <div class="urgent-badge">⚡ LIMITED TIME - ACT NOW ⚡</div>
+            <p class="subtitle">Don't miss out on these incredible deals!</p>
+        </header>
+        
+        <!-- Top refresh button - added here as requested -->
+        <div class="top-refresh-section">
+            <button class="refresh-btn" onclick="window.location.reload()">REFRESH FOR NEW EXCLUSIVE OFFERS</button>
+            <p style="margin-top: 20px; color: #00ccff; font-size: 18px;">
+                New <span class="glowing-text">HIGH-VALUE</span> offers loaded every refresh!
+            </p>
+        </div>
+        
         <main>
             <div class="ads-container">
-                <div class="ads-section"
+                <div class="ads-section">
                     <script data-cfasync="false">
                         ll_r="sandyarta";
                         ll_bc="#ffffff";
@@ -288,6 +302,7 @@
                 </div>
             </div>
             
+            <!-- Bottom refresh button (kept for user convenience) -->
             <div class="refresh-section">
                 <button class="refresh-btn" onclick="window.location.reload()">REFRESH FOR NEW EXCLUSIVE OFFERS</button>
                 <p style="margin-top: 20px; color: #00ccff; font-size: 18px;">
