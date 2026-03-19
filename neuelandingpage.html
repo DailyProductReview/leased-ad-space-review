@@ -1,764 +1,313 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> 
-  <title>Make Money Online with Affiliate Marketing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description" 
-    content="Discover how to build reliable online income with affiliate marketing. Get my free step-by-step starter guide and learn the exact process to get started."
-  />
-  <style>
-    :root {
-      --bg: #0f172a;
-      --bg-light: #111827;
-      --accent: #22c55e;
-      --accent-soft: rgba(34, 197, 94, 0.08);
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --danger: #f97373;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      padding: 18px 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .logo-mark {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-    }
-
-    .header-tagline {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .hero {
-      max-width: 1100px;
-      margin: 16px auto 40px;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-      gap: 32px;
-      align-items: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 18px;
-      }
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 118, 110, 0.25);
-      border: 1px solid rgba(45, 212, 191, 0.4);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 3.2vw, 2.8rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
-    }
-
-    .hero-highlight {
-      color: var(--accent);
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 520px;
-      margin-bottom: 14px;
-    }
-
-    .hero-sublist {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .hero-sublist li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .check {
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      flex-shrink: 0;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      border-radius: 999px;
-      border: none;
-      padding: 10px 26px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      color: #022c22;
-      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease,
-        background 0.15s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(34, 197, 94, 0.45);
-      background: #16a34a;
-    }
-
-    .cta-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .meta-badge {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .hero-card {
-      background: radial-gradient(circle at top left, #1e293b 0, #020617 55%);
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.85);
-    }
-
-    .hero-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      gap: 10px;
-    }
-
-    .hero-card-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .hero-card-tag {
-      font-size: 0.72rem;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-
-    .hero-card-body {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .progress-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 7px;
-      border-radius: 999px;
-      background: #020617;
-      overflow: hidden;
-      margin-bottom: 12px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .progress-bar-fill {
-      width: 68%;
-      height: 100%;
-      background: linear-gradient(90deg, #22c55e, #4ade80);
-      box-shadow: 0 0 16px rgba(34, 197, 94, 0.7);
-    }
-
-    .hero-metric-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 4px;
-      font-size: 0.8rem;
-    }
-
-    .metric {
-      flex: 1;
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(75, 85, 99, 0.8);
-    }
-
-    .metric-label {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
-
-    .metric-value {
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .metric-positive {
-      color: var(--accent);
-      font-size: 0.78rem;
-    }
-
-    .metric-warning {
-      color: var(--danger);
-      font-size: 0.78rem;
-    }
-
-    .preview-text-box {
-      margin-top: 12px;
-      padding: 10px;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.9);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      border: 1px dashed rgba(75, 85, 99, 0.9);
-    }
-
-    .preview-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    /* HOW IT WORKS SECTION */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto 40px;
-      padding: 0 24px;
-    }
-
-    .section-title {
-      font-size: 1.2rem;
-      margin-bottom: 6px;
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-      max-width: 620px;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    @media (max-width: 900px) {
-      .steps {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .step-card {
-      background: var(--bg-light);
-      border-radius: 14px;
-      padding: 14px 14px 16px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-    }
-
-    .step-number {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .step-heading {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .step-text {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* SIGN-UP SECTION */
-    .signup {
-      max-width: 1100px;
-      margin: 0 auto 40px;
-      padding: 22px 24px 32px;
-      border-radius: 18px;
-      border: 1px solid rgba(75, 85, 99, 0.85);
-      background: radial-gradient(circle at top, #0b1120 0, #020617 60%);
-    }
-
-    .signup-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    @media (max-width: 800px) {
-      .signup-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .signup-label {
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .signup-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .signup-text {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .signup-list {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      list-style: none;
-    }
-
-    .signup-list li {
-      margin-bottom: 6px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .signup-list li span {
-      font-size: 0.75rem;
-      margin-top: 3px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    input[type="text"],
-    input[type="email"] {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      background: #020617;
-      color: var(--text-main);
-      font-size: 0.9rem;
-      outline: none;
-    }
-
-    input::placeholder {
-      color: #4b5563;
-    }
-
-    input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.5);
-    }
-
-    .privacy-note {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .legal-notice {
-      margin-top: 10px;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-
-    footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 24px 30px;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-    }
-
-    footer a {
-      text-decoration: underline;
-      text-decoration-color: rgba(148, 163, 184, 0.7);
-      text-underline-offset: 3px;
-      font-size: 0.72rem;
-    }
-
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The All New Click Generator – Best Buyer TRAFFIC I Ever Tested!</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: #f0f5fa;
+            color: #1a2f3f;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px;
+        }
+        .top-alert {
+            background: #c44536;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: 800;
+            font-size: 1.6rem;
+            border-bottom: 5px solid #8e2c1d;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin: 30px 0 15px;
+            color: #1f4a5c;
+            border-left: 10px solid #f4a261;
+            padding-left: 25px;
+        }
+        h2 {
+            font-size: 2.2rem;
+            margin: 50px 0 20px;
+            color: #1d3b4b;
+            border-bottom: 3px solid #f4a261;
+            padding-bottom: 8px;
+        }
+        .highlight-box {
+            background: white;
+            border: 3px solid #f4a261;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 25px -10px rgba(0,60,80,0.2);
+            margin: 30px 0;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(145deg, #f4a261, #e07b39);
+            color: #1e2f3a;
+            font-weight: 900;
+            font-size: 2rem;
+            text-decoration: none;
+            padding: 25px 60px;
+            border-radius: 80px;
+            box-shadow: 0 15px 25px -5px #aa6633;
+            margin: 30px 0 20px;
+            border: 3px solid white;
+            transition: 0.2s;
+        }
+        .cta-btn:hover { transform: scale(1.02); background: #f8b47c; }
+        .cta-small { font-size: 1.4rem; padding: 18px 40px; background: #1f4a5c; color: white; }
+        .guarantee-badge {
+            background: #f8f9fa;
+            border-radius: 100px;
+            padding: 12px 30px;
+            display: inline-block;
+            font-weight: 700;
+            border: 2px dashed #2a7f4d;
+            color: #1d6f42;
+            margin: 15px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: #1f4a5c;
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 3px solid #f4a261;
+        }
+        .profile-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .profile-item {
+            background: #1d3b4b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .profile-item i { color: #f4a261; margin-right: 8px; }
+        .bonus-showcase {
+            background: linear-gradient(145deg, #0f2b36, #1f4a5c);
+            color: white;
+            padding: 40px;
+            border-radius: 40px;
+            margin: 50px 0;
+            border: 4px solid #f4a261;
+        }
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .bonus-card {
+            background: white;
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            border: 3px solid #f4a261;
+        }
+        .bonus-card img { max-width: 100%; border-radius: 15px; margin-bottom: 15px; }
+        .bonus-tag {
+            background: #f4a261;
+            color: #0f2b36;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 800;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .important-note {
+            background: #c44536;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .result-box {
+            background: #e0f2e9;
+            border-left: 10px solid #2a7f4d;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            font-size: 1.3rem;
+        }
+        .faq-item {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 20px;
+            margin: 15px 0;
+            border-left: 8px solid #f4a261;
+        }
+        .disclaimer-block {
+            margin-top: 60px;
+            padding: 30px;
+            background: #e5edf2;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        .footer-note { text-align: center; margin: 40px 0; }
+        @media (max-width: 700px) { h1 { font-size: 2rem; } .cta-btn { font-size: 1.4rem; padding: 18px 30px; } }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="logo">
-        <div class="logo-mark">AM</div>
-        <span>Affiliate Momentum</span>
-      </div>
-      <div class="header-tagline">
-        Build reliable online income with smart affiliate systems.
-      </div>
-    </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div>
-          <div class="pill">
-            <span class="pill-dot"></span>
-            <span>Free training • Beginner friendly • No hype</span>
-          </div>
+<div class="top-alert">
+    <i class="fas fa-star"></i> BEST BUYER TRAFFIC I EVER TESTED! 100% USA · REAL LEADS · PROVEN RESULTS <i class="fas fa-star"></i>
+</div>
 
-          <h1 class="hero-title">
-            Learn how to
-            <span class="hero-highlight">make money online</span><br />
-            with affiliate marketing — the right way.
-          </h1>
+<div class="container">
 
-          <p class="hero-subtitle">
-            Get a practical, no-BS guide that shows you how to pick offers,
-            attract the right visitors, and turn clicks into real commissions —
-            without fake promises or shady tactics.
-          </p>
+    <h1>Best Buyer TRAFFIC I ever tested! <span style="color:#c44536;">The All New Click Generator</span></h1>
 
-          <ul class="hero-sublist">
-            <li>
-              <div class="check">✓</div>
-              <span>Step-by-step process: from zero to your first commission.</span>
-            </li>
-            <li>
-              <div class="check">✓</div>
-              <span>What actually works in 2025 — and what quietly kills your results.</span>
-            </li>
-            <li>
-              <div class="check">✓</div>
-              <span>Simple system you can run in your free time next to your main job.</span>
-            </li>
-          </ul>
+    <div class="highlight-box">
+        <h2 style="border-bottom: none; margin-top:0;">My Experience With The Program So Far</h2>
+        <p style="font-size:1.3rem;">I want to be completely honest with you. When I first discovered this traffic source, I thought it was just another cheap traffic program like all the others I had tried before. You know the ones, they promise the world and deliver nothing but bots and fake clicks. <strong>I almost did not bother.</strong></p>
+        <p style="font-size:1.3rem; margin-top:20px;">Thankfully, I took the leap. And it changed everything.</p>
+    </div>
 
-          <div class="hero-cta-row">
-            <button class="btn-primary" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'});">
-              Get the free starter guide
-            </button>
-            <span class="cta-note">Takes 10 seconds. No credit card required.</span>
-          </div>
+    <!-- Call to Action 1 -->
+    <div style="text-align: center;">
+        <a href="https://warriorplus.com/o2/a/x9jvz9/0/trafficadbar" target="_blank" class="cta-btn">
+            👉 GET USA BUYER TRAFFIC NOW <i class="fas fa-arrow-right"></i>
+        </a>
+        <div class="guarantee-badge"><i class="fas fa-shield-alt"></i> 20+ YEARS EXPERIENCE · REAL BUYERS ONLY</div>
+    </div>
 
-          <div class="hero-meta">
-            <div class="meta-badge">Made for beginners & early-stage marketers</div>
-            <div class="meta-badge">Works with affiliate networks like Digistore24, CJ, etc.</div>
-          </div>
+    <!-- What I Like -->
+    <h2>✅ What I Like</h2>
+    <div style="background:white; padding:30px; border-radius:25px;">
+        <p><i class="fas fa-check-circle" style="color:#2a7f4d; font-size:1.6rem;"></i> <strong>The traffic is exclusively USA.</strong> That is right, 100% Tier1 traffic. No third-world countries. No cheap traffic from places where people cannot afford to buy. Just pure, high-quality American visitors with credit cards in their hands. <strong>This alone makes it worth ten times the price.</strong></p>
+        <p><i class="fas fa-check-circle" style="color:#2a7f4d; font-size:1.6rem;"></i> <strong>The leads are not just active, they are buyers.</strong> I have collected hundreds of leads through this program, and these people actually open emails, click links, and purchase products. I know because I have tested them repeatedly. They are real marketers with real money.</p>
+        <p><i class="fas fa-check-circle" style="color:#2a7f4d; font-size:1.6rem;"></i> <strong>I was so impressed that I kept investing.</strong> First I bought 5times the TCG Yearly for $45 to promote five different links. The savings compared to monthly pricing made it a no-brainer. Then, a few weeks ago, I made my biggest investment yet, the Executive 1000 Top Tier Clicks package for $650.</p>
+    </div>
+
+    <!-- The $13,500 Result -->
+    <div class="result-box">
+        <h2 style="border-bottom: none; color:#1d3b4b; margin-top:0;">💰 The $13,500 Result</h2>
+        <p style="font-size:1.5rem;"><strong>From that single $650 investment, I generated 620 new USA leads.</strong> Real people. Real emails. Real subscribers. And then the sales started rolling in. From those leads, I made 65 sales on a low-ticket offer with upsells. <strong style="color:#c44536;">Total commissions? $13,500.</strong></p>
+        <p style="font-size:1.4rem;">Do the math. That is a massive return on investment. I have paid for this traffic source many times over, and I will keep buying every single month.</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+        <div class="stat-card"><i class="fas fa-users"></i> 620+ USA LEADS</div>
+        <div class="stat-card"><i class="fas fa-shopping-cart"></i> 65 SALES</div>
+        <div class="stat-card"><i class="fas fa-dollar-sign"></i> $13,500 COMMISSIONS</div>
+        <div class="stat-card"><i class="fas fa-chart-line"></i> 20+ YEARS EXP</div>
+    </div>
+
+    <!-- Affiliate Program & Provider -->
+    <h2>🤝 The Affiliate Program & The Provider</h2>
+    <div style="background:#f8f4e9; padding:25px; border-radius:25px;">
+        <p><i class="fas fa-gem" style="color:#f4a261;"></i> <strong>You earn 50% commissions on almost every upsell.</strong> When you refer others to this traffic source, you get paid generously. And you can feel good about promoting it because you know the traffic delivers.</p>
+        <p><i class="fas fa-history" style="color:#f4a261;"></i> <strong>The provider has been in affiliate marketing for over 20 years.</strong> This is not some newbie trying to make a quick buck. This is a seasoned professional who understands what quality traffic means and delivers it consistently.</p>
+    </div>
+
+    <!-- What I Dislike / Final Verdict -->
+    <h2>⭐ What I Dislike & Final Verdict</h2>
+    <div style="background:#1f4a5c; color:white; padding:30px; border-radius:30px;">
+        <p style="font-size:1.5rem;"><strong>What I Dislike:</strong> Nothing. Seriously. I have searched for something to criticize, and I keep coming up empty. The traffic is USA only, the leads convert, the provider is experienced, and the affiliate commissions are generous. <strong>This is the real deal.</strong></p>
+        <p style="font-size:1.5rem; margin-top:20px;"><strong>Final Verdict:</strong> Stop wasting money on garbage traffic sources. I have tried them all. The cheap solo ad providers. The bot-filled traffic exchanges. The "too good to be true" offers that deliver nothing. I have lost thousands. <strong>This is different. This is the traffic source I have been searching for my entire online career.</strong> I now buy from this provider every single month.</p>
+    </div>
+
+    <!-- BONUS SECTION (identical to previous, with upgrade-only note) -->
+    <div class="bonus-showcase">
+        <h2 style="color:#f4a261; text-align:center;">🎁 EXCLUSIVE BONUSES – OVER $5,600 VALUE! 🎁</h2>
+        <div class="important-note">
+            <i class="fas fa-exclamation-triangle"></i> IMPORTANT: The 5 Bonuses below are ONLY included when you purchase ANY Upgrade (Yearly, Executive, etc.). The front-end purchase does NOT include these bonuses. <i class="fas fa-exclamation-triangle"></i>
         </div>
-
-        <!-- HERO CARD -->
-        <aside class="hero-card" aria-label="Preview of your progress dashboard">
-          <div class="hero-card-header">
-            <div class="hero-card-title">Affiliate Starter Snapshot</div>
-            <div class="hero-card-tag">Preview</div>
-          </div>
-          <p class="hero-card-body">
-            Imagine logging in and seeing a simple dashboard that shows you
-            exactly where your affiliate income comes from — and how to grow it
-            without guessing.
-          </p>
-
-          <div class="progress-row">
-            <span>Path to your first commission</span>
-            <span>68% planned</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-bar-fill"></div>
-          </div>
-
-          <div class="hero-metric-row">
-            <div class="metric">
-              <div class="metric-label">Traffic without intent</div>
-              <div class="metric-value">Too high</div>
-              <div class="metric-warning">
-                Most beginners send random clicks and wonder why nothing sells.
-              </div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Buyer traffic</div>
-              <div class="metric-value">Needs work</div>
-              <div class="metric-positive">
-                The guide teaches how to get people already prepared to buy.
-              </div>
-            </div>
-          </div>
-
-          <div class="preview-text-box">
-            <div class="preview-label">Inside the free guide</div>
-            <div>
-              • The 3 silent mistakes that keep people stuck with “$0 months”<br />
-              • How to choose offers that can realistically pay you<br />
-              • Simple page + email structure that makes it easy to say “yes”
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <!-- HOW IT WORKS -->
-      <section class="section">
-        <h2 class="section-title">Here’s how your affiliate system will work</h2>
-        <p class="section-subtitle">
-          One traffic source, one landing page, one main offer — then scale slowly and
-          predictably.
-        </p>
-
-        <div class="steps">
-          <div class="step-card">
-            <div class="step-number">Step 1</div>
-            <div class="step-heading">Pick offers that can actually pay you</div>
-            <p class="step-text">
-              Learn how to identify winning affiliate programs and avoid low-quality offers
-              that waste your time.
-            </p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">Step 2</div>
-            <div class="step-heading">Build a page that collects leads</div>
-            <p class="step-text">
-              Get a simple but highly effective page layout that builds trust and captures
-              interested visitors.
-            </p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">Step 3</div>
-            <div class="step-heading">Send focused traffic & follow up</div>
-            <p class="step-text">
-              Attract visitors who are already looking to buy, and guide them using
-              automated emails.
-            </p>
-          </div>
+        <div class="bonus-grid">
+            <div class="bonus-card"><img src="https://imgallery.llsvr.com/sandyarta.69bbe525cef20.png" alt="Bonus 1"><h4>🔥 Which Offers Convert The Best</h4><span class="bonus-tag">$997 VALUE</span></div>
+            <div class="bonus-card"><img src="https://imgallery.llsvr.com/sandyarta.69bbe53011dda.png" alt="Bonus 2"><h4>💰 $290,311.60 in 30 Days</h4><span class="bonus-tag">$497 VALUE</span></div>
+            <div class="bonus-card"><img src="https://imgallery.llsvr.com/sandyarta.69bbe4eb31a98.png" alt="Bonus 3"><h4>📈 $97/Sale Income System</h4><span class="bonus-tag">$997 VALUE</span></div>
+            <div class="bonus-card"><img src="https://imgallery.llsvr.com/sandyarta.69bbe6da35c20.png" alt="Bonus 4"><h4>🚀 Launch Creator Case Study</h4><span class="bonus-tag">$297 VALUE</span></div>
+            <div class="bonus-card"><img src="https://imgallery.llsvr.com/sandyarta.69bbe76f844fe.png" alt="Bonus 5"><h4>🏆 Competition Canner + AutoPilot</h4><span class="bonus-tag">$1,794 VALUE</span></div>
         </div>
-      </section>
+        <p style="text-align:center; font-size:1.5rem; background:#2a7f4d; padding:15px; border-radius:60px;">⬆️ ALL 5 BONUSES – BUT ONLY WITH ANY UPGRADE! ⬆️</p>
+    </div>
 
-      <!-- SIGN-UP -->
-      <section id="signup" class="signup" aria-label="Sign up for the free affiliate starter guide">
-        <div class="signup-inner">
-          <div>
-            <div class="signup-label">Free training • Limited spots</div>
-            <h2 class="signup-title">
-              Get the <strong>Affiliate Starter Guide</strong> delivered to your inbox.
-            </h2>
-            <p class="signup-text">
-              Enter your details and you'll get instant access to the exact framework used
-              by successful affiliate marketers worldwide.
-            </p>
-            <ul class="signup-list">
-              <li>
-                <span>•</span>
-                <span>Beginner-friendly explanations, no hype.</span>
-              </li>
-              <li>
-                <span>•</span>
-                <span>Concrete examples you can copy.</span>
-              </li>
-              <li>
-                <span>•</span>
-                <span>A checklist for your first steps.</span>
-              </li>
-            </ul>
-          </div>
+    <!-- Call to Action 2 -->
+    <div style="text-align: center;">
+        <a href="https://warriorplus.com/o2/a/x9jvz9/0/trafficadbar" target="_blank" class="cta-btn cta-small">
+            👉 GET USA BUYER TRAFFIC & START EARNING <i class="fas fa-lock"></i>
+        </a>
+    </div>
 
-          <div>
-            <!-- FULLY WORKING SENDSTEED EMAIL FORM -->
-            <form method="post" action="https://www.sendsteed.com/subscribe/">
-              <label for="email">Enter your email address:</label>
-              <input 
-                type="text" 
-                name="e110570" 
-                id="email" 
-                required 
-                placeholder="your@email.com"
-              >
+    <!-- Ideal Customer Profiles -->
+    <h2>👥 Ideal Customer Profiles – Perfect For</h2>
+    <div class="profile-icons">
+        <span class="profile-item"><i class="fas fa-user-tie"></i> Affiliate marketers</span>
+        <span class="profile-item"><i class="fas fa-flag-usa"></i> USA traffic seekers</span>
+        <span class="profile-item"><i class="fas fa-ban"></i> Tired of low-quality leads</span>
+        <span class="profile-item"><i class="fas fa-chart-bar"></i> Business owners</span>
+        <span class="profile-item"><i class="fas fa-percent"></i> 50% commission hunters</span>
+    </div>
 
-              <label for="name">Your name:</label>
-              <input 
-                type="text" 
-                name="n110570" 
-                id="name"
-                required
-                placeholder="Your name"
-              >
+    <!-- Key Benefits Summary -->
+    <h2>🔑 Key Benefits Summary</h2>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:15px;">
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> 100% USA traffic only</div>
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> Real active leads & buyers</div>
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> $13,500 from $650 investment</div>
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> TCG Yearly for $45 (5 links)</div>
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> Executive 1000 Top Tier Clicks</div>
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> 50% commissions on upsells</div>
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> 20+ years provider experience</div>
+        <div style="background:#e8f0f5; padding:15px; border-radius:15px;"><i class="fas fa-check-circle" style="color:green;"></i> I buy this every month</div>
+    </div>
 
-              <input type="hidden" name="lllid" value="110570">
-              <input type="hidden" name="lluid" value="sandyarta">
-              <input type="hidden" name="redirect" value="">
-              <input type="hidden" name="source" value="">
+    <!-- FAQ Section -->
+    <h2>❓ FAQ</h2>
+    <div class="faq-item"><strong>How do I know the leads are real?</strong> I have emailed them, marketed to them, and made sales from them. They are active, engaged buyers.</div>
+    <div class="faq-item"><strong>What results can I expect?</strong> I turned $650 into $13,500. Your results depend on your offer and funnel, but the traffic quality gives you the best possible chance.</div>
+    <div class="faq-item"><strong>Is the provider legitimate?</strong> 20+ years in affiliate marketing. This is a seasoned professional who values their reputation and delivers quality consistently.</div>
+    <div class="faq-item"><strong>Do I get the bonuses with the front-end?</strong> No. The 5 bonuses are only included with any upgrade (Yearly, Executive, etc.). The front-end gives you access to the traffic system and 50% commissions.</div>
 
-              <button type="submit" class="btn-primary">
-                Get instant access
-              </button>
+    <!-- Final CTA -->
+    <div style="text-align: center; margin: 60px 0;">
+        <a href="https://warriorplus.com/o2/a/x9jvz9/0/trafficadbar" target="_blank" class="cta-btn" style="background:#c44536; font-size:2rem;">
+            👉 SECURE YOUR USA BUYER TRAFFIC <i class="fas fa-fire"></i>
+        </a>
+        <p style="margin-top:20px;"><strong>I am done searching for traffic. I found my source. Now it is your turn.</strong></p>
+    </div>
 
-              <p class="privacy-note">
-                You will receive helpful emails about affiliate marketing. You can unsubscribe anytime.
-              </p>
-            </form>
+    <!-- DISCLAIMER -->
+    <div class="disclaimer-block">
+        <p><strong>Affiliate Disclosure:</strong> This page contains affiliate links. If you purchase through these links, I may earn a commission at no additional cost to you. I only recommend products I truly believe in.</p>
+        <p><strong>Earnings Disclaimer:</strong> Results are not typical. Your results may vary based on individual effort and market factors. I turned $650 into $13,500, but this does not guarantee you will do the same.</p>
+        <p>All payments are made directly to the product vendor. All product questions and support requests must be sent to the vendor.</p>
+    </div>
 
-            <p class="legal-notice">
-              <strong>Income disclaimer:</strong> This guide shares strategies, not promises. Your personal effort determines your results. <br /><br />
-              <strong>Affiliate disclosure:</strong> Some links may be affiliate links. I may earn a commission at no extra cost to you.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+    <!-- Footer -->
+    <div class="footer-note">
+        <p>© 2026 The All New Click Generator Review – All Rights Reserved</p>
+    </div>
 
-    <footer>
-      <div class="footer-row">
-        <span>© <span id="year"></span> Affiliate Momentum. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="#">Imprint</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-        </div>
-      </div>
-      <div>
-        This digital content is for personal use only and may not be copied,
-        redistributed, or resold in any form.
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+</div>
 </body>
 </html>
