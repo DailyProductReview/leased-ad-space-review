@@ -1,4 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Erfolgsmaschine – Jetzt starten | Exklusiver Zugang</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    /* Entfernt jeglichen Overlay-Scroll – Bild muss auf einen Blick komplett sichtbar sein */
+    body {
+      background: #0a0c10;
+      height: 100vh;               /* Volle Viewport-Höhe */
+      width: 100vw;               /* Volle Breite */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      overflow: hidden;           /* Verhindert globales Scrollen – Bild komplett ohne Scrollleiste */
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    /* Hauptcontainer – exakt an Viewport angepasst, perfekte Zentrierung */
+    .landing-container {
+      width: 100%;
+      height: 100%;
+      max-width: 1400px;          /* nur für große Bildschirme eine angenehme Begrenzung, bleibt aber fit */
+      max-height: 100%;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 0;           /* Keine Rundungen, um maximalen Bildraum zu nutzen – bei Wunsch optional abrunden */
+      box-shadow: none;           /* Cleaner Look, Bild dominiert */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    /* Vertikale Zentrierung */
+      align-items: center;
+    }
+
+    /* Der interaktive Bildlink: nimmt gesamten verfügbaren Platz ein, ohne Scrollen */
+    .clickable-image {
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      transition: opacity 0.2s ease, filter 0.2s ease;
+      background: #ffffff;
+      line-height: 0;
+      text-align: center;
+      flex-shrink: 1;
+      /* Wichtig: Keine Höhenfixierung – das Bild skaliert proportional */
+    }
+
+    /* Bild komplett sichtbar – responsive Skalierung ohne Überlauf oder Scrollen */
+    .clickable-image img {
+      max-width: 100%;
+      max-height: calc(100vh - 80px);   /* Reserviert etwas Platz für minimale UI-Elemente (falls nötig) – aber kein Scrollen weil Body overflow hidden */
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;         /* Ganze Grafik bleibt erkennbar, keine Verzerrung */
+      background: #ffffff;
+    }
+
+    /* Hover- und Interaktionseffekte bleiben dezent */
+    .clickable-image:hover {
+      filter: brightness(1.01) contrast(1.02);
+    }
+
+    .clickable-image:active {
+      transform: scale(0.99);
+      transition: transform 0.05s linear;
+    }
+
+    /* Hinweisbereich – extrem reduziert, um Bildfläche nicht zu stehlen.
+       Aber gut lesbar, ohne dass Nutzer scrollen muss. */
+    .hint-tooltip {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(4px);
+      text-align: center;
+      padding: 6px 12px;
+      font-size: 0.7rem;
+      color: #1f3b4a;
+      border-top: 1px solid #eef2f8;
+      letter-spacing: 0.3px;
+      font-weight: 500;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      /* minimaler, fester Bereich – kein zusätzlicher Scroll */
+    }
+
+    .hint-tooltip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef2f7dd;
+      padding: 4px 12px;
+      border-radius: 60px;
+      font-weight: 480;
+    }
+
+    .hint-tooltip svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #1e6f9f;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Footer komplett entfernt – gar kein extra Element mehr, um maximalen Raum für das Bild zu schaffen 
+       (optional, aber wir streichen den Footer-Meta – keine zusätzliche Höhe) 
+       So ist nur der winzige Hinweisbalken + Bild sichtbar, kein Scroll nötig.
+    */
+
+    /* Kein footer-meta mehr – ersatzlos gestrichen, da er nicht notwendig ist.
+       Falls jemand einen Hinweis wünscht, reicht der kompakte .hint-tooltip */
+
+    /* Extra Responsive-Feintuning: Bei extrem kleinen Höhen (z.B. 500px) bleibt das Bild voll sichtbar. */
+    @media (max-aspect-ratio: 1/1) or (max-height: 600px) {
+      .clickable-image img {
+        max-height: calc(100vh - 48px); /* noch mehr Platz für den schmalen Hinweis, Bild bleibt komplett */
+      }
+      .hint-tooltip {
+        padding: 4px 8px;
+        font-size: 0.65rem;
+      }
+      .hint-tooltip span {
+        padding: 2px 8px;
+      }
+    }
+
+    /* Für sehr breite oder sehr hohe Bildschirme: Keine ungewollten Scrollbars */
+    @media (min-width: 1600px) {
+      .clickable-image img {
+        max-height: 90vh;   /* auch bei riesigen Monitoren immer voll im Viewport */
+      }
+    }
+
+    /* Barrierefreiheit & Tastatur-Fokus */
+    .clickable-image:focus-visible {
+      outline: 3px solid #1e6f9f;
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
+
+    .clickable-image {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Verhindert Scrollen auf HTML- und Body-Ebene doppelt abgesichert */
+    html {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    /* Fallback: Keine vertikalen Scrollbalken, 100% Darstellung */
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<div class="landing-container">
+  <!-- Vollflächig klickbares Bild – öffnet Zielseite im neuen Tab, kein Scroll erforderlich, 
+       das Bild wird ohne Verzerrung komplett angezeigt -->
+  <a href="https://hop.clickbank.net/?affiliate=verborgene&vendor=ambsador&cbpage=ambassador-trial"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="clickable-image"
+     aria-label="Jetzt Erfolgsmaschine starten – Ambassador-Programm im neuen Tab öffnen">
+    <img src="https://imgallery.llsvr.com/sandyarta.6a0ad5a2812d9.png"
+         alt="Erfolgsgrafik: Transformation von SO zu $104.170,53 pro Monat im Autopilot – Direktzugang durch Klick"
+         loading="eager"
+         width="1200"
+         height="auto">
+  </a>
+
+  <!-- Minimaler, nicht störender Hinweis – Bild bleibt im Fokus, kein zusätzlicher Scrollzwang -->
+  <div class="hint-tooltip">
+    <span>
+      <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.8" fill="none">
+        <path d="M18 13v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3" />
+        <polyline points="15 3 21 3 21 9" />
+        <line x1="10" y1="14" x2="21" y2="3" />
+      </svg>
+      <span>Exklusiven Zugang sichern – Ein Klick genügt</span>
+    </span>
+  </div>
+</div>
+
+<!-- Kein Tracking, keine Skripte – reine Landingpage gemäß Vorgabe: Bild komplett sichtbar ohne Scrollen, 
+     Klick öffnet Zielseite im neuen Fenster/Tab. Zusätzlich wurde das Layout so optimiert, 
+     dass die Grafik immer proportional und vollständig im Viewport erscheint – unabhängig von Bildschirmgröße oder Seitenverhältnis. -->
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="de">
 <head>
