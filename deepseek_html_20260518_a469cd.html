@@ -1,394 +1,166 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Ambassador Program | Limited Trial Offer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Erfolgsmaschine – Jetzt starten</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background: linear-gradient(145deg, #1a0b0b 0%, #2c1a1a 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', 'Roboto', 'Poppins', system-ui, -apple-system, 'Arial', sans-serif;
-            padding: 2rem;
-        }
+    body {
+      background: #0a0c10;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 20px;
+    }
 
-        /* MAIN RED SQUARE CARD */
-        .red-square {
-            background-color: #cc0000;
-            background-image: radial-gradient(circle at 25% 40%, rgba(255,215,0,0.08) 2%, transparent 2.5%),
-                              radial-gradient(circle at 70% 85%, rgba(255,215,0,0.05) 1.8%, transparent 2%);
-            background-size: 48px 48px, 60px 60px;
-            max-width: 860px;
-            width: 100%;
-            border-radius: 2rem;
-            box-shadow: 0 30px 45px -15px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255,255,200,0.3);
-            padding: 2rem 2rem 2rem 2rem;
-            transition: all 0.2s ease;
-            border: 1px solid #ffd966;
-        }
+    /* Hauptcontainer – zentriert und responsive */
+    .landing-container {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        /* YELLOW TEXT GLOBAL */
-        .yellow-text, h1, h2, h3, p, li, .timer-block, .cta-text, .guarantee, .bonus-note, .button-area span {
-            color: #FFD966;
-            text-shadow: 2px 2px 0 #9b2e2e;
-        }
+    /* Interaktiver Bildbereich – klickbarer Cursor */
+    .clickable-image {
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      transition: opacity 0.2s ease, filter 0.2s ease;
+      background: #f2f4f8;
+      line-height: 0; /* verhindert ungewollten Abstand unter dem Bild */
+    }
 
-        h1 {
-            font-size: 1.9rem;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-            text-align: center;
-            border-bottom: 2px solid #ffcd4a;
-            display: inline-block;
-            width: auto;
-            margin: 0 auto 1rem;
-            padding-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
+    .clickable-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: #ffffff;
+    }
 
-        .headline-block {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
+    /* Hover-Effekt: dezentes Aufhellen + leichter Schatten */
+    .clickable-image:hover {
+      filter: brightness(1.01) contrast(1.02);
+    }
 
-        .main-headline {
-            font-size: 1.7rem;
-            font-weight: 800;
-            line-height: 1.3;
-            background: rgba(0,0,0,0.3);
-            padding: 0.6rem 1rem;
-            border-radius: 60px;
-            display: inline-block;
-            backdrop-filter: blur(2px);
-        }
+    .clickable-image:active {
+      transform: scale(0.99);
+      transition: transform 0.05s linear;
+    }
 
-        .subhead {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-top: 0.75rem;
-            color: #FFE28C;
-        }
+    /* Subtiler Hinweis am unteren Bildrand (optional) */
+    .hint-tooltip {
+      background: #f9fafc;
+      text-align: center;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: #2c3e4e;
+      border-top: 1px solid #e9edf2;
+      letter-spacing: 0.3px;
+      font-weight: 450;
+    }
 
-        /* BULLET POINTS STYLING */
-        .bullet-list {
-            margin: 2rem 0 1.8rem;
-            list-style: none;
-            padding-left: 0.5rem;
-        }
+    .hint-tooltip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef2f7;
+      padding: 6px 14px;
+      border-radius: 60px;
+    }
 
-        .bullet-list li {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            background: rgba(0,0,0,0.25);
-            padding: 0.6rem 1rem;
-            border-radius: 40px;
-            backdrop-filter: blur(2px);
-            border-left: 5px solid #ffcd4a;
-        }
+    .hint-tooltip svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: #1e6f9f;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-        .bullet-list li::before {
-            content: "✔️";
-            font-size: 1.3rem;
-            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.4));
-        }
+    /* Footer / kleine info – dezent */
+    .footer-meta {
+      background: #f5f7fa;
+      padding: 12px 20px;
+      font-size: 0.7rem;
+      text-align: center;
+      color: #6c7a8a;
+      border-top: 1px solid #e2e8f0;
+      font-family: monospace;
+    }
 
-        /* TIMER COUNTDOWN (09hrs 02mins 18secs inspiration) */
-        .timer-section {
-            background: #8b0000;
-            border-radius: 50px;
-            padding: 0.8rem;
-            text-align: center;
-            margin: 1rem 0 1.6rem;
-            border: 1px solid #ffcd79;
-            box-shadow: inset 0 0 5px rgba(0,0,0,0.3), 0 6px 12px rgba(0,0,0,0.2);
-        }
+    /* voll responsive: Randausgleich, falls Bild zu breit */
+    @media (max-width: 720px) {
+      .landing-container {
+        border-radius: 24px;
+      }
+      .hint-tooltip {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+      }
+      .hint-tooltip span {
+        padding: 4px 10px;
+      }
+    }
 
-        .timer-label {
-            font-size: 1rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    /* Fokussierbar für Barrierefreiheit (Tastatur) */
+    .clickable-image:focus-visible {
+      outline: 3px solid #1e6f9f;
+      outline-offset: 2px;
+      border-radius: 12px;
+    }
 
-        .timer-digits {
-            font-size: 2.2rem;
-            font-weight: 800;
-            font-family: monospace;
-            letter-spacing: 5px;
-            background: #2d0000;
-            display: inline-block;
-            padding: 0.2rem 1rem;
-            border-radius: 50px;
-            margin-top: 5px;
-        }
-
-        /* special offer highlight */
-        .earn-highlight {
-            background: #ffcd4a30;
-            border-radius: 40px;
-            padding: 0.7rem;
-            text-align: center;
-            font-weight: bold;
-            margin: 1rem 0;
-            font-size: 1.1rem;
-            border: 1px dashed #ffdd88;
-        }
-
-        /* CTA BUTTON */
-        .cta-button {
-            display: block;
-            background: radial-gradient(ellipse at top, #FFB347, #FF8C00);
-            border: none;
-            padding: 1rem 1.6rem;
-            font-size: 1.6rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-align: center;
-            border-radius: 60px;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-            margin: 20px 0 15px;
-            box-shadow: 0 12px 20px -8px rgba(0,0,0,0.5);
-            letter-spacing: 2px;
-            color: #2c0f0f;
-            text-shadow: none;
-            background: #ffcc33;
-            border-bottom: 4px solid #b26200;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.01);
-            background: #ffda5e;
-            box-shadow: 0 18px 25px -10px black;
-            border-bottom-color: #e07c00;
-        }
-
-        .button-sub {
-            font-size: 0.8rem;
-            text-align: center;
-            color: #FFF0B5;
-            margin-top: -10px;
-            font-weight: 500;
-        }
-
-        .free-trial-note {
-            background: #aa2e2e;
-            padding: 0.5rem;
-            border-radius: 30px;
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .guarantee {
-            font-size: 0.75rem;
-            text-align: center;
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-
-        hr {
-            border-color: #ffd96660;
-            margin: 15px 0;
-        }
-
-        .small-print {
-            font-size: 0.7rem;
-            text-align: center;
-            color: #ffda88;
-        }
-
-        /* responsive */
-        @media (max-width: 550px) {
-            .red-square {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 1.4rem;
-            }
-            .bullet-list li {
-                font-size: 0.9rem;
-            }
-            .timer-digits {
-                font-size: 1.5rem;
-                letter-spacing: 2px;
-            }
-            .cta-button {
-                font-size: 1.2rem;
-                padding: 0.9rem;
-            }
-        }
-
-        .flex-badge {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin: 15px 0;
-        }
-        .badge-item {
-            background: #a33333;
-            border-radius: 40px;
-            padding: 0.2rem 1rem;
-            font-weight: bold;
-            font-size: 0.75rem;
-        }
-    </style>
+    /* verhindert unschönes blaues Highlight auf Mobilgeräten */
+    .clickable-image {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
 </head>
 <body>
+<div class="landing-container">
+  <!-- Das gesamte Bild ist klickbar – öffnet die Zielseite im neuen Tab -->
+  <a href="https://hop.clickbank.net/?affiliate=verborgene&vendor=ambsador&cbpage=ambassador-trial"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="clickable-image"
+     aria-label="Zum Ambassador-Programm – wird in einem neuen Tab geöffnet">
+    <img src="https://imgallery.llsvr.com/sandyarta.6a0ad5a2812d9.png"
+         alt="Erfolgsgrafik: I WENT FROM SO TO $104,170.53 A MONTH ON AUTOPILOT – Klicken für exklusiven Zugang"
+         loading="eager"
+         width="1200"
+         height="auto">
+  </a>
 
-<div class="red-square">
-    <!-- YELLOW TEXT everything inside inherits -->
-    <div class="headline-block">
-        <div class="main-headline">
-            🔥 LIMITED OFFER - TRY OUT THE AMBASSADOR PROGRAM FREE FOR 7 DAYS 🔥
-        </div>
-        <div class="subhead">
-            ⚡ HOW I GENERATE UP TO $104,170.53 A MONTH ON AUTOPILOT ⚡
-        </div>
-    </div>
-
-    <!-- Timer block (09hrs 02mins 18secs style) -->
-    <div class="timer-section">
-        <div class="timer-label">⏳ OFFER EXPIRES IN ⏳</div>
-        <div class="timer-digits" id="countdownDisplay">09h 02m 18s</div>
-        <div class="timer-label" style="font-size:0.75rem;">grab your spot before timer hits zero</div>
-    </div>
-
-    <!-- 5 to 7 bullet points (exactly 6 core points) with high-impact yellow text -->
-    <ul class="bullet-list">
-        <li>✅ Generate leads, sales & commissions <strong>24/7</strong> – fully automated sales machine</li>
-        <li>✅ <strong>NO</strong> product creation, NO ads, NO customer support – work just <strong>30 minutes a day</strong></li>
-        <li>✅ Done-for-you webinar funnel pays up to <strong>$3,243 per sale</strong> – clone a proven 7-figure system</li>
-        <li>✅ Keep 100% of tripwire profits & earn recurring income from 10 monthly subscription offers</li>
-        <li>✅ 99-day autoresponder + lead magnets + affiliate recruitment – zero extra effort</li>
-        <li>✅ UNLIMITED expert support + 365-day money back guarantee – risk free trial</li>
-    </ul>
-
-    <!-- Extra earning statement (yellow text) -->
-    <div class="earn-highlight">
-        🚀 "Without spending time creating products, paying for ads, or fulfilling services... <br>
-        All while building YOUR email list for lifetime profits!" 🚀
-    </div>
-
-    <!-- CTA area with the exact ClickBank hoplink -->
-    <button class="cta-button" id="watchNowBtn">🔴 WATCH HERE INFO + GET INSTANT ACCESS ▶</button>
-    <div class="button-sub">
-        🔓 Free Trial • 7 Days • Then 25x $24.95/week • Cancel anytime in first 7 days
-    </div>
-    
-    <div class="free-trial-note">
-        💎 JOIN NOW FREE – ACCESS IN THE NEXT 2 MINUTES 💎
-    </div>
-
-    <!-- Additional info: 7 bonuses -->
-    <div class="flex-badge">
-        <div class="badge-item">📚 7 FREE BONUSES</div>
-        <div class="badge-item">📧 100k+ Subscriber promo</div>
-        <div class="badge-item">🎯 99 days traffic boost</div>
-    </div>
-
-    <hr>
-    <div class="guarantee">
-        🔒 BACKED BY OUR UNPRECEDENTED 365 DAY MONEY BACK GUARANTEE 🔒<br>
-        ✅ Instant digital access • 256-bit security encryption
-    </div>
-    <div class="small-print">
-        *Free trial for 7 days followed by 25 payments of $24.95 at weekly intervals. Cancel within trial & you won't be charged.
-    </div>
+  <!-- Minimaler, optionaler Hinweis (Design bleibt clean, nur kleine Info) -->
+  <div class="hint-tooltip">
+    <span>
+      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.8" fill="none">
+        <path d="M18 13v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3" />
+        <polyline points="15 3 21 3 21 9" />
+        <line x1="10" y1="14" x2="21" y2="3" />
+      </svg>
+    </span>
+  </div>
+  <div class="footer-meta">
+  </div>
 </div>
 
-<script>
-    // COUNTDOWN TIMER: set target to 09h 02m 18s from now? But we replicate the "09hrs 02mins 18secs" as a visual countdown from 9h 2m 18s
-    // Because the offer text shows a specific static time, but we implement a dynamic 9h 2min 18sec countdown to mimic offer urgency.
-    // Starting from 9 hours, 2 minutes, 18 seconds and count down to zero, then reset or show expired.
-    let totalSeconds = (9 * 3600) + (2 * 60) + 18;   // 9h 02m 18s total seconds
-    
-    const timerElement = document.getElementById('countdownDisplay');
-    
-    function updateTimerDisplay() {
-        if (totalSeconds < 0) {
-            timerElement.innerText = "00h 00m 00s";
-            return;
-        }
-        const hours = Math.floor(totalSeconds / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
-        timerElement.innerText = `${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
-    }
-    
-    function startCountdown() {
-        updateTimerDisplay();
-        const interval = setInterval(() => {
-            if (totalSeconds > 0) {
-                totalSeconds--;
-                updateTimerDisplay();
-            } else {
-                clearInterval(interval);
-                timerElement.innerText = "00h 00m 00s";
-            }
-        }, 1000);
-    }
-    
-    startCountdown();
-    
-    // BUTTON REDIRECT: exactly the clickbank link with affiliate and vendor parameters as per requirement.
-    // The provided link: https://hop.clickbank.net/?affiliate=verborgene&vendor=ambsador&cbpage=ambassador-trial
-    // "damit man zum video kommt" -> that link leads to video/sales page.
-    // Also we ensure that click opens in a new tab for better UX.
-    const watchButton = document.getElementById('watchNowBtn');
-    if (watchButton) {
-        watchButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetUrl = "https://hop.clickbank.net/?affiliate=verborgene&vendor=ambsador&cbpage=ambassador-trial";
-            window.open(targetUrl, '_blank');
-        });
-    }
-    
-    // additional safety for any mobile/touch
-    watchButton.style.cursor = "pointer";
-    
-    // Extra style emphasis: the red square already contains all yellow text, button has its own style, ready
-    // The phrase "how und dann lösung watch here info is" is fully resolved by the button label and function.
-    // Also we added bullet points exactly 6 (between 5 to 7). Description matches solution.
-    
-    // Also to improve the bullet points consistency we make sure the style shows yellow text.
-    // Hover subtle effect on square
-    const squareCard = document.querySelector('.red-square');
-    if(squareCard) {
-        squareCard.addEventListener('mouseenter', () => {
-            squareCard.style.transform = "scale(1.002)";
-            squareCard.style.transition = "0.2s";
-        });
-        squareCard.addEventListener('mouseleave', () => {
-            squareCard.style.transform = "scale(1)";
-        });
-    }
-</script>
-
-<!-- 
-    This page includes:
-    - Red square background with rich yellow text elements.
-    - 6 bullet points (clearly inside yellow-styled list).
-    - Timer visual (09hrs 02mins 18secs style counting down).
-    - Main heading and subheading highlighting $104k/month autopilot.
-    - Button leads to ClickBank hop link (watch here info / get instant access).
-    - All information regarding Ambassador Program, free trial and 365-day guarantee.
-    Fully responsive, mobile-friendly.
--->
+<!-- Optional: Ein kleiner Scriptblock für zusätzliche Sicherheit / Tracking-frei -->
+<!-- Kein Tracking, reine Landingpage gemäß Anforderung: Bild & Klick öffnet Zielseite im neuen Fenster -->
 </body>
 </html>
